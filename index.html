@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next Level Video Editing Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600;800&family=Oswald:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="loading-state">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader-content">
+        <div class="loader-text">INITIALIZING ASSETS...</div>
+        <div class="progress-bar-container">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="loader-status">0%</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-left">
+        <span class="user-name">Aurate Animea</span>
+      </div>
+      <div class="nav-right">
+        <div class="music-toggle" id="musicToggle">
+          <i class="ri-play-circle-fill" id="playIcon"></i>
+          <i
+            class="ri-pause-circle-fill"
+            id="pauseIcon"
+            style="display: none"
+          ></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- App Container -->
+    <main id="app">
+      <!-- Hero Section -->
+      <section id="hero" class="section">
+        <div class="hero-bg-shapes">
+          <!-- GSAP driven clips -->
+          <div class="hero-clip shapesMagnet clip-1"></div>
+          <div class="hero-clip shapesMagnet clip-2"></div>
+          <div class="hero-clip shapesMagnet clip-3"></div>
+        </div>
+        <div class="hero-content fade-in-up">
+          <h1 class="hero-title">
+            <span class="line"
+              >UNLEASH YOUR
+              <span class="hero-highlight">VIRAL</span> POTENTIAL</span
+            >
+            <span class="line"
+              >WITH <span class="hero-highlight">PRO VIDEO EDITING</span></span
+            >
+          </h1>
+          <p class="hero-description">
+            Transform your raw footage into captivating stories that engage,
+            inspire, and convert. With cutting-edge editing techniques and
+            creative storytelling, I bring your vision to life with precision
+            and style. Let's create something extraordinary together!
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">HIRE ME</a>
+            <a href="#reels" class="btn-secondary">SEE PORTFOLIO</a>
+          </div>
+          <div class="client-showcase">
+            <div class="client-image-wrapper">
+              <div
+                class="client-image"
+                style="
+                  background: linear-gradient(135deg, #ff00ff 0%, #8b00ff 100%);
+                "
+              >
+                <i class="ri-user-line"></i>
+              </div>
+              <div class="client-overlay">45+</div>
+            </div>
+            <div class="client-image-wrapper">
+              <div
+                class="client-image"
+                style="
+                  background: linear-gradient(135deg, #00ffff 0%, #0080ff 100%);
+                "
+              >
+                <i class="ri-briefcase-line"></i>
+              </div>
+              <div class="client-overlay">200+</div>
+            </div>
+            <div class="client-image-wrapper">
+              <div
+                class="client-image"
+                style="
+                  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+                "
+              >
+                <i class="ri-movie-line"></i>
+              </div>
+              <div class="client-overlay">500+</div>
+            </div>
+            <div class="client-image-wrapper">
+              <div
+                class="client-image"
+                style="
+                  background: linear-gradient(135deg, #00ff00 0%, #008000 100%);
+                "
+              >
+                <i class="ri-star-line"></i>
+              </div>
+              <div class="client-overlay">1M+</div>
+            </div>
+            <div class="client-text">WORK WITH CLIENTS</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <div class="container about-container">
+          <div class="about-text fade-in-up">
+            <h2>WHO I AM</h2>
+            <p>
+              I'm a passionate video editor dedicated to transforming raw
+              footage into compelling visual stories. With years of experience
+              in content creation, I specialize in crafting engaging narratives
+              that captivate audiences across all platforms.
+            </p>
+            <p>
+              My approach combines technical precision with creative
+              storytelling. Whether it's a documentary, social media content, or
+              commercial projects, I bring your vision to life with cutting-edge
+              editing techniques and an unwavering attention to detail.
+            </p>
+            <p>
+              From color grading to sound design, every element is carefully
+              crafted to create content that not only looks stunning but also
+              resonates emotionally with viewers.
+            </p>
+          </div>
+          <div class="about-visual">
+            <div class="about-video-wrapper" onclick="openAboutVideoModal()">
+              <video
+                src="assets/shorts.mp4"
+                muted
+                loop
+                playsinline
+                class="about-video"
+              ></video>
+              <div class="about-video-overlay">
+                <div class="play-btn-overlay">
+                  <i class="ri-play-fill"></i>
+                </div>
+                <p class="video-label">WATCH MY STORY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section (Timeline) -->
+      <section id="skills" class="section">
+        <div class="timeline-wrapper">
+          <div class="timeline-ruler">
+            <!-- Numbers will be generated by JS -->
+          </div>
+          <!-- The Playhead -->
+          <div class="playhead"></div>
+
+          <div class="tracks-container">
+            <!-- Layer V1 -->
+            <div class="track" id="track-1">
+              <div class="track-label">LAYER V1</div>
+              <div class="track-content">
+                <!-- Set 1 -->
+                <div style="width: 200px"></div>
+                <div
+                  class="skill-item shapesMagnet"
+                  data-title="CONTENT CREATION"
+                >
+                  CONTENT CREATION
+                </div>
+                <div class="skill-item shapesMagnet" data-title="FX">FX</div>
+                <div class="skill-item shapesMagnet" data-title="SOUND EDITING">
+                  SOUNDS
+                </div>
+                <!-- Set 2 -->
+                <div style="width: 150px"></div>
+                <div class="skill-item shapesMagnet" data-title="STORYTELLING">
+                  STORYTELLING
+                </div>
+                <div class="skill-item shapesMagnet" data-title="TRANSITIONS">
+                  TRANSITIONS
+                </div>
+                <div class="skill-item shapesMagnet" data-title="AUDIO SYNC">
+                  AUDIO SYNC
+                </div>
+                <!-- Set 3 -->
+                <div style="width: 200px"></div>
+                <div class="skill-item shapesMagnet" data-title="PACING">
+                  PACING
+                </div>
+                <div class="skill-item shapesMagnet" data-title="VFX OVERLAYS">
+                  OVERLAYS
+                </div>
+                <div class="skill-item shapesMagnet" data-title="SFX DESIGN">
+                  SFX DESIGN
+                </div>
+              </div>
+            </div>
+
+            <!-- Layer A1 -->
+            <div class="track" id="track-2">
+              <div class="track-label">LAYER A1</div>
+              <div class="track-content">
+                <!-- Set 1 -->
+                <div style="width: 100px"></div>
+                <div class="skill-item shapesMagnet" data-title="GLITCHES">
+                  GLITCHES
+                </div>
+                <div class="skill-item shapesMagnet" data-title="TRIMMING">
+                  TRIMMING
+                </div>
+                <div class="skill-item shapesMagnet" data-title="KEYFRAMING">
+                  KEYFRAMING
+                </div>
+                <div class="skill-item shapesMagnet" data-title="MASKING">
+                  MASKING
+                </div>
+                <!-- Set 2 -->
+                <div style="width: 120px"></div>
+                <div
+                  class="skill-item shapesMagnet"
+                  data-title="NOISE REDUCTION"
+                >
+                  DENOISE
+                </div>
+                <div class="skill-item shapesMagnet" data-title="BEAT SYNC">
+                  BEAT MATCH
+                </div>
+                <div class="skill-item shapesMagnet" data-title="EQ & MIXING">
+                  EQUALIZATION
+                </div>
+                <!-- Set 3 -->
+                <div style="width: 80px"></div>
+                <div class="skill-item shapesMagnet" data-title="DIALOGUE">
+                  DIALOGUE
+                </div>
+                <div class="skill-item shapesMagnet" data-title="AMBIENCE">
+                  AMBIENCE
+                </div>
+                <div class="skill-item shapesMagnet" data-title="MASTERING">
+                  MASTERING
+                </div>
+              </div>
+            </div>
+
+            <!-- Layer FX -->
+            <div class="track" id="track-3">
+              <div class="track-label">LAYER FX</div>
+              <div class="track-content">
+                <!-- Set 1 -->
+                <div style="width: 350px"></div>
+                <div class="skill-item shapesMagnet" data-title="COLOR GRADING">
+                  COLOR GRADING
+                </div>
+                <div
+                  class="skill-item shapesMagnet"
+                  data-title="VFX COMPOSITING"
+                >
+                  VFX
+                </div>
+                <div
+                  class="skill-item shapesMagnet"
+                  data-title="MOTION GRAPHICS"
+                >
+                  MOGRT
+                </div>
+                <!-- Set 2 -->
+                <div style="width: 250px"></div>
+                <div class="skill-item shapesMagnet" data-title="LUTS & LOOKS">
+                  LUTS
+                </div>
+                <div class="skill-item shapesMagnet" data-title="GREEN SCREEN">
+                  CHROMA KEY
+                </div>
+                <div
+                  class="skill-item shapesMagnet"
+                  data-title="TEXT ANIMATION"
+                >
+                  TITLES
+                </div>
+                <!-- Set 3 -->
+                <div style="width: 300px"></div>
+                <div
+                  class="skill-item shapesMagnet"
+                  data-title="COLOR CORRECTION"
+                >
+                  CORRECTION
+                </div>
+                <div class="skill-item shapesMagnet" data-title="PARTICLES">
+                  PARTICLES
+                </div>
+                <div class="skill-item shapesMagnet" data-title="3D TRACKING">
+                  TRACKING
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reels / Short Videos Section (Swiper Slider) -->
+      <section id="reels" class="section">
+        <div class="projects-container fade-in-up">
+          <div class="section-header">
+            <h2>SHORT-FORM CONTENT</h2>
+            <p>VIRAL REELS & TIKTOKS</p>
+          </div>
+
+          <div class="swiper reels-slider">
+            <div class="swiper-wrapper" id="reelsWrapper">
+              <!-- Slides injected via JS -->
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Long-form Videos Section (Grid Layout) -->
+      <section id="long-videos" class="section">
+        <div class="projects-container">
+          <div class="section-header">
+            <h2>LONG-FORM VIDEOS</h2>
+            <p>DOCUMENTARIES, VLOGS & SERIES</p>
+          </div>
+
+          <div class="video-grid" id="videoGrid">
+            <!-- Grid items injected via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section">
+        <div class="contact-wrapper">
+          <div class="contact-header">
+            <h2 class="contact-title">
+              LET'S CREATE SOMETHING <span class="highlight-text">AMAZING</span>
+            </h2>
+            <p class="contact-subtitle">
+              Ready to elevate your content? Reach out and let's discuss your
+              next project.
+            </p>
+          </div>
+
+          <div class="contact-content">
+            <div class="contact-info-card">
+              <h3>GET IN TOUCH</h3>
+              <div class="social-links-grid">
+                <a
+                  href="https://www.instagram.com/mughal.dev/"
+                  class="social-card"
+                  target="_blank"
+                >
+                  <i class="ri-instagram-line"></i>
+                  <span>Instagram</span>
+                  <i class="ri-arrow-right-up-line arrow"></i>
+                </a>
+                <a href="#" class="social-card" target="_blank">
+                  <i class="ri-linkedin-box-line"></i>
+                  <span>LinkedIn</span>
+                  <i class="ri-arrow-right-up-line arrow"></i>
+                </a>
+                <a
+                  href="https://x.com/your_handle"
+                  class="social-card"
+                  target="_blank"
+                >
+                  <i class="ri-twitter-x-line"></i>
+                  <span>X / Twitter</span>
+                  <i class="ri-arrow-right-up-line arrow"></i>
+                </a>
+                <a
+                  href="https://calendly.com/"
+                  class="social-card"
+                  target="_blank"
+                >
+                  <i class="ri-calendar-line"></i>
+                  <span>Book a Call</span>
+                  <i class="ri-arrow-right-up-line arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="kickoff-card">
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>ACCEPTING NEW CLIENTS FOR FEB 2026</span>
+              </div>
+
+              <h3>START YOUR PROJECT</h3>
+              <p class="kickoff-desc">
+                Select a category to schedule your strategy session.
+              </p>
+
+              <div class="project-tags">
+                <button
+                  class="project-tag"
+                  onclick="selectProjectType('documentary')"
+                >
+                  DOCUMENTARY
+                </button>
+                <button
+                  class="project-tag"
+                  onclick="selectProjectType('commercial')"
+                >
+                  COMMERCIAL
+                </button>
+                <button
+                  class="project-tag"
+                  onclick="selectProjectType('music-video')"
+                >
+                  MUSIC VIDEO
+                </button>
+                <button
+                  class="project-tag"
+                  onclick="selectProjectType('social-content')"
+                >
+                  SOCIAL CONTENT
+                </button>
+              </div>
+
+              <div class="kickoff-action">
+                <a
+                  href="https://calendly.com/"
+                  target="_blank"
+                  class="btn-primary full-width"
+                  id="kickoffBtn"
+                >
+                  <span>BOOK DISCOVERY CALL</span>
+                  <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-content">
+          <span>&copy; 2024</span>
+          <span class="credits">CREDITS: MUGHAL.DEV</span>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-close-btn" onclick="closeVideoModal()">
+        <i class="ri-close-line"></i>
+      </div>
+      <div class="modal-content">
+        <div id="modalPlayerContainer"></div>
+        <div class="modal-loader"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="animation.js"></script>
+    <script src="script.js"></script>
+    <script src="magnetic.js"></script>
+    <script src="projects.js"></script>
+    <script>
+      function selectProjectType(type) {
+        // Reset all tags
+        document
+          .querySelectorAll(".project-tag")
+          .forEach((t) => t.classList.remove("active"));
+        // Highlight clicked tag
+        event.target.classList.add("active");
+
+        // Update CTA Button Text
+        const btnText = document.querySelector("#kickoffBtn span");
+        const formattedType = type.replace("-", " ").toUpperCase();
+        btnText.textContent = `BOOK ${formattedType} STRATEGY`;
+
+        // GSAP Emphasis
+        gsap.from("#kickoffBtn", {
+          scale: 0.95,
+          duration: 0.3,
+          ease: "back.out(1.7)",
+        });
+      }
+    </script>
+  </body>
+</html>

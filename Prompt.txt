@@ -1,0 +1,87 @@
+**Role**: Expert Creative Developer (Awwwards-Level)
+**Objective**: Build a "Next-Generation Video Editor Portfolio" website that feels like a high-end cinematic experience.
+**Tech Stack**: HTML5, Vanilla CSS3 (Variables, Flex/Grid), Vanilla JavaScript (ES6+).
+**Libraries**:
+*   **GSAP (GreenSock)** + **ScrollTrigger**: For complex timeline animations and pinning.
+*   **Lenis**: For buttery smooth inertia scrolling.
+*   **Howler.js**: For ambient background audio integration.
+*   **Swiper.js**: For project lists/carousels.
+*   **Remix Icons**: For UI iconography.
+
+**Design Language**:
+*   **Theme**: Deep Blue Cinematic Mode (`#000A16` Hero Background, `#050505` global, `#ffffff` text).
+*   **Typography**:
+    *   Headings: *Oswald* (Bold, Uppercase, condensed, wide letter-spacing).
+    *   Body: *Inter* (Clean, legible, modern sans-serif).
+*   **Accent Colors**: Electric Blue (`#2197ED`) for active states, highlights, and borders.
+*   **Cursor**: Custom dual-cursor system using GSAP. A small solid lead dot + a larger trailing circle that follows with a delay (lag effect) and snaps/scales when hovering over interactive elements or links.
+
+---
+
+### **Detailed Feature Blueprint**
+
+#### **1. Immersive Preloader (The Hook)**
+*   **Visual**: A full-screen dark blue overlay covering the site on load.
+*   **Functionality**:
+    *   Display a centered progress bar (0% to 100%).
+    *   Cycle through dynamic "Terminal" style text updates below the bar: *"INITIALIZING CORE...", "LOADING ASSETS...", "RENDERING FRAMES...", "COMPILING...", "READY"*.
+    *   Once 100% is reached, the preloader curtain should slide UP (`yPercent: -100`) with a premium ease (`power4.inOut`), revealing the Hero section.
+
+#### **2. Hero Section**
+*   **Layout**: Centered, majestic typography.
+*   **Content**: "CINEMATIC VIDEO EDITOR" split into multiple lines.
+*   **Visuals**:
+    *   **Background**: Deep Dark Blue (`#000A16`) with a subtle `light.webp` texture overlay.
+    *   **Elements**: Replace abstract shapes with 3 Distinct "Video Clip" Elements (Rectangular, 130x90px with rounded corners). These represent video files floating in the workspace. They should have a glassmorphism effect (semi-transparent blue tint) and a Play icon (`▶`) in the center.
+    *   **Animation**: These clips must float independently with random `xPercent/yPercent` floating animation.
+    *   **Magnetic Interaction**: Implement a "Magnetic Effect" on these clips. When the mouse hovers over a clip, it should attract/move towards the cursor slightly (using GSAP `x` and `y` properties) and spring back (`elastic` ease) when the mouse leaves.
+*   **Blend Mode**: Use `mix-blend-mode: normal` for clean visibility on the deep blue background.
+
+#### **3. About Section**
+*   **Layout**: Split 2-column grid.
+*   **Content**: Left side text ("THE VISION"), Right side visual/image placeholder.
+*   **Style**: Clean, minimalist spacing to let the typography breathe.
+
+#### **4. The "Timeline" Skills Section (Signature Feature)**
+*   **Concept**: A horizontal scrolling section that mimics the UI of a professional video editing software (e.g., Premiere Pro, Davinci Resolve).
+*   **Interaction**: As the user scrolls down, the entire section is **Pinned** (sticky), and the content moves horizontally (Left to Right).
+*   **Structure**:
+    *   **Ruler**: Top distinct time-ruler (00:00:01, 00:00:02...).
+    *   **Playhead**: A static vertical red line in the center of the screen.
+    *   **Tracks**: 3-4 Horizontal tracks ("Layer V1", "Layer A1", "FX Layer").
+    *   **Clips (Skills)**: Skills (e.g., "Color Grading", "Sound Design", "VFX") are represented as "video clips" on these tracks.
+*   **Styling**: Each "Clip" should have a random neon border color and semi-transparent glass fill.
+*   **Dynamic Title**: As a "Clip" passes under the central Playhead, a large background text title updates to reflect that skill name immediately. This creates a tactile "scrubbing" effect.
+
+#### **5. Projects "Workspace" (Interactive Application)**
+*   **Concept**: A simulated "Export Window" interface.
+*   **UI Components**:
+    *   **Tabs**: Toggle between "Long Form" and "Short Form" content.
+    *   **Sidebar**: A list of projects (swiper/list). Clicking a project selects it.
+    *   **Monitor (Preview)**: A central screen with a CRT/Scanline overlay effect.
+*   **The "Export" Gamification**:
+    *   When a project is selected, the Monitor shows "READY".
+    *   User clicks a **"RENDER / EXPORT"** button.
+    *   **Simulation**: A modal overlay appears simulating a rendering process. Show a spinner and cycle through technical steps: *"Applying LUTs...", "Merging Audio...", "Finalizing..."*.
+    *   **Duration**: Randomize the wait time (e.g., 3 to 8 seconds).
+    *   **Finale**: Upon completion, trigger a **Confetti Explosion** (Canvas/CSS particles) and play the video (or show a "Watch Now" state).
+
+#### **6. Global Audio System**
+*   **Navbar Toggle**: A "Sound" button in the nav.
+*   **State**: When active, show an animated 3-bar visualizer (CSS animation). When inactive, show a static dot.
+*   **Function**: Loop a subtle, cinematic ambient background track using `Howler.js`.
+
+#### **7. Contact & Footer**
+*   **Socials**: Massive, screen-width text links for "Instagram", "WhatsApp", etc. On hover, they should shift horizontally (`translateX`) for a bold interactive feel.
+*   **Form**: A sleek, minimal email input line.
+*   **Responsiveness**:
+    *   **Mobile**: The "Timeline" must adapt (either simple horizontal scroll without pin or a vertical stack).
+    *   **Mobile**: Hide complex background shapes if they cause performance issues (`dispay: none` on mobile breakpoint).
+    *   **Navigation**: Ensure touch targets are large enough.
+
+---
+
+**Technical Mandates**:
+*   **Mobile First**: Responsive design is non-negotiable. Use media queries (`@media (max-width: 768px)`) to adjust font sizes and layouts.
+*   **Clean Code**: JavaScript should be modular. Separate the "Projects/Workspace" logic into its own function or file (`projects.js`) to keep the main `script.js` clean.
+*   **Performance**: Use `will-change` properties for heavy animations. Ensure GSAP triggers are properly cleaned up or refreshed.
